@@ -1,9 +1,9 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-// 시간: 408ms
+// 시간: 164ms
 // 시간줄이기
-// 1. input bufferedreader로 변경: 164ms
+// 1. input bufferedreader로 변경: 408ms => 164ms
 // 2. 이분탐색 => Main2_jiun.java
 
 import java.util.Arrays;
