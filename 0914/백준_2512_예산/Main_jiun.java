@@ -35,9 +35,9 @@ public class Main_jiun {
 		for (i = n-1; i >= 0; i--) {
 			sum = getSum(i,arr[i]); // 0~i-1는 그대로,i+1~n-1은 arr[i+1]을 상한가로 만들었을 때의 합. 
 			if(total_budget >= sum) {// 합이 sum보다 크면
-				if(total_budget == sum || i == n-1) { // *) i == n-1을 추가해 런타임에러 해결
-					System.out.println(arr[i]);
-					return;
+				if(total_budget == sum || i == n-1) { // 총 예산이 합과 같으면 arr[i]가 상한가이므로 *) i == n-1을 추가해 런타임에러 해결
+					System.out.println(arr[i]); // 출력
+					return;// 종료
 				}
 				break;
 			}
