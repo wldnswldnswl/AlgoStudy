@@ -9,7 +9,10 @@ bool cmp(pair<int, int> a, pair<int, int> b) {
     //meeting의 뒤의 원소의 끝나는 시간이 앞의 원소보다 크다면 true 리턴 
 	if (a.second < b.second)
 		return true;
-    //반대일시 false 리턴
+    //만일 끝나는시간이 같다면 시작시간이 작은 것 먼저 정렬
+    else if (a.second == b.second)
+		return a.first < b.first;
+    //앞의 원소의 끝나는 시간이 뒤의 원소보다 크다면 false 리턴
 	else
 		return false;
 }
