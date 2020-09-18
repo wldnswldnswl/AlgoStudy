@@ -27,10 +27,10 @@ public class Main {
 				for (int k = 0; k < m; k++) {
 					map[i][j][k] = Integer.parseInt(st.nextToken()); // 1: 익은 토마토, 0: 익지 않은 토마토, -1: 빈 칸
 					if (map[i][j][k] == 0)
-						cnt++;
+						cnt++; // 익지 않은 토마토의 갯수 세어주기. (0이되면 종료시킬 것)
 					else if (map[i][j][k] == 1) {
 						visit[i][j][k] = true;
-						q.add(new int[] { i, j, k, 0 });
+						q.add(new int[] { i, j, k, 0 });// 익은 토마토는 퍼트리기 위해 큐에 삽입.
 					}
 				}
 			}
