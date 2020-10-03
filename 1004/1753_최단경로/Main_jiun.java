@@ -1,5 +1,3 @@
-package _20_10_1st.Baekjoon_1753_최단경로;
-
 // https://www.acmicpc.net/problem/1753
 // 메모리 초과 해결방법: 인접리스트로 해결 && pq로 성능개선
 import java.io.BufferedReader;
