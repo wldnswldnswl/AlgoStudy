@@ -36,6 +36,15 @@ public class Main_Baekjoon_1269_차집합{
 		
 	}// end of main
 
+	/**
+	 * name: getDifferenceSetSize
+	 * description: 기준 집합과 타겟 집합의 차집합을 구하고, 차집합의 크기를 반환한다.
+	 * @param standard_arr: 기준 집합
+	 * @param target_arr: 타겟 집합
+	 * @param standard_size: 기준 집합의 크기
+	 * @param target_size: 타겟 집합의 크기
+	 * @return cnt (차집합의 크기)
+	 */
 	private static int getDifferenceSetSize(int[] standard_arr, int[] target_arr,int standard_size,int target_size) {
 		boolean[] contains = new boolean[MAX]; // 차집합의 원소임을 표시하는 배열
 		int cnt = 0; //차집합의 크기를 세어줄 변수
