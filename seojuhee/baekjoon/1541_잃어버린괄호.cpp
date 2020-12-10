@@ -10,18 +10,19 @@ int main() {
 	// 연산에 쓰일 숫자를 저장하는 벡터
 	vector<int> numArr;
 	// 변수의 총합과 정답, 식의 길이를 저장할 변수
-	int sumNum = 0, answer, size;
+	int sumNum = 0, answer, expression_size, numArr_size;
 
 	cin >> expression;
-	size = expression.size();
+	expression_size = expression.size();
 
-	for (int i = 0; i < size; i++) {
+	for (int i = 0; i < expression_size; i++) {
+		int num = expression[i] - '0';
 		// 현재 원소가 숫자일 경우
-		if (expression[i] - '0' >= 0 && expression[i] - '0' <= 9) {
+		if (num >= 0 && num <= 9) {
 			// 현재숫자를 저장
-			curNum += expression[i];
+			curNum += num;
 			// 마지막원소일 경우
-			if (i == size - 1) {
+			if (i == expression_size - 1) {
 				// 지금까지의 변수의 총합을 구한 후 배열에 추가한다
 				sumNum += stoi(curNum);
 				numArr.push_back(sumNum);
@@ -40,8 +41,9 @@ int main() {
 	}
 	// answer에 배열의 첫번째 원소를 대입함
 	answer = numArr[0];
+	numArr_size = numArr.size();
 
-	for (int i = 1; i < numArr.size(); i++) {
+	for (int i = 1; i < numArr_size; i++) {
 		// 배열 원소들을 계속 뺌
 		answer -= numArr[i];
 	}
