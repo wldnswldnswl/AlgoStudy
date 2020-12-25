@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+// https://www.acmicpc.net/problem/10799
 /**
  * String input, int currentPiece, int numOfStick;\
  * 1. input을 순회
