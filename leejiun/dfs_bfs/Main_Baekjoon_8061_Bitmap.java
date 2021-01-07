@@ -1,6 +1,5 @@
 // https://www.acmicpc.net/problem/8061
-
-// bitmap is either white or black, but at least one is white. 
+// SOL) BFS로 정점 1에서부터 정점 0까지의 최단 거리를 구한다.
 // i:행, j:열
 // 가장 가까운 white와의 거리
 
@@ -37,8 +36,7 @@ public class Main_Baekjoon_8061_Bitmap {
         q = new LinkedList<>();
         for (int i = 0; i < H; i++) {
             for (int j = 0; j < W; j++) {
-                bitmap[i][j] = bitmap[i][j] == 1 ? 0 : 1; // 정점1이면 0으로 바꾸기(시작점)
-                if(bitmap[i][j] == 0){
+                if(bitmap[i][j] == 1){//정점 1을 저장 (정점 1에서 정점0 까지의 최단거리를 구하기 위함)
                     visit[i][j] = 1;
                     q.offer(new Node(i,j));
                 }
@@ -83,7 +81,8 @@ public class Main_Baekjoon_8061_Bitmap {
                     continue;
 
                 // 방문 할 수 있는 곳이면
-                if(visit[nr][nc] == 0 && bitmap[nr][nc] == 1){
+                // = 구한 거리가 없고, 정점 0이라면
+                if(visit[nr][nc] == 0 && bitmap[nr][nc] == 0){
                     visit[nr][nc] = visit[node.r][node.c]+1;
                     q.offer(new Node(nr,nc)); //새로 4방 탐색할 위치
                 }
